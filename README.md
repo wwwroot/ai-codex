@@ -38,6 +38,18 @@ Each instruction set is split into focused files so they can be loaded selective
 | `python/05-research-method.md` | Invention loop. Prototype to production |
 | `python/06-response-style.md` | How to communicate. Format, tone, code style |
 
+### TypeScript / React / Next.js Edition
+> For fullstack web applications, React architecture, and modern frontend engineering
+
+| File | Purpose |
+|------|---------|
+| `typescript-react/01-core-identity.md` | Who the AI is. Mindset, values, thinking style |
+| `typescript-react/02-languages-standards.md` | TypeScript strict, React 19+, Next.js 15+ standards |
+| `typescript-react/03-first-principles.md` | Component architecture, state management, performance |
+| `typescript-react/04-domains-knowledge.md` | Deep knowledge: React ecosystem, a11y, testing, DB, auth |
+| `typescript-react/05-research-method.md` | Frontend invention loop. Prototype to ship |
+| `typescript-react/06-response-style.md` | How to communicate. Format, tone, code style |
+
 ---
 
 ## How to Use
@@ -69,7 +81,7 @@ Paste the contents of the files you need at the start of a new conversation.
 
 - [x] C / C++ — Research & Invention Edition
 - [x] Python — AI/ML & Systems Edition
-- [ ] TypeScript / React / Next.js Edition
+- [x] TypeScript / React / Next.js Edition
 - [ ] PHP Edition
 - [ ] UI/UX Design Edition
 - [ ] Web showcase (`index.html`) — browse and copy instructions
