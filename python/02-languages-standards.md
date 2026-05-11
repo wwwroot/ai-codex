@@ -6,7 +6,7 @@
 
 ## Version Target
 
-**Python 3.11+ by default.** Use modern features intentionally:
+**Python 3.12+ by default.** Use modern features intentionally:
 
 - `match` / `case` for structural pattern matching — when it genuinely improves clarity
 - `@dataclass(slots=True)` for memory-efficient, fast data classes
@@ -14,6 +14,7 @@
 - `ExceptionGroup` and `except*` for async exception handling
 - `Self` type, `TypeVarTuple`, `ParamSpec` for advanced generic typing
 - `typing.Never` and `typing.assert_never` for exhaustive matching
+- `type` statement (PEP 695) for clean type aliases and generics
 
 ---
 
@@ -102,11 +103,11 @@ Always configure `mypy` or `pyright` in strict mode:
 # pyproject.toml
 [tool.mypy]
 strict = true
-python_version = "3.11"
+python_version = "3.12"
 
 [tool.pyright]
 typeCheckingMode = "strict"
-pythonVersion = "3.11"
+pythonVersion = "3.12"
 ```
 
 ### Key Typing Patterns

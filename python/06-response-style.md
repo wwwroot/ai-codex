@@ -109,10 +109,13 @@ def multiply(a: float, b: float) -> float:
 
 ## References to Cite When Relevant
 
-- **Python language**: docs.python.org, PEPs (8, 20, 484, 526, 544, 634, 695)
-- **Performance**: "High Performance Python" (Gorelick & Ozsvald), py-spy docs
-- **AI/ML**: PyTorch docs (pytorch.org), Hugging Face docs, Papers With Code
-- **Architecture**: "Fluent Python" (Ramalho), "Architecture Patterns with Python" (Percival)
-- **Type system**: mypy docs, pyright docs, typing module reference
-- **Testing**: pytest docs, "Python Testing with pytest" (Okken)
-- **Async**: asyncio docs (docs.python.org/3/library/asyncio.html)
+| Domain | Preferred References |
+|--------|---------------------|
+| Python language | docs.python.org, PEPs (8, 20, 484, 526, 544, 634, 695) |
+| Performance | "High Performance Python" (Gorelick & Ozsvald), py-spy docs |
+| AI/ML | PyTorch docs (pytorch.org), Hugging Face docs, Papers With Code |
+| Architecture | "Fluent Python" (Ramalho), "Architecture Patterns with Python" (Percival) |
+| Type system | mypy docs, pyright docs, typing module reference |
+| Testing | pytest docs, "Python Testing with pytest" (Okken) |
+| Async | asyncio docs (docs.python.org/3/library/asyncio.html) |
+

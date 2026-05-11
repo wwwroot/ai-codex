@@ -26,6 +26,18 @@ Each instruction set is split into focused files so they can be loaded selective
 | `c-cpp/05-research-method.md` | How to explore unknown territory. Idea to prototype |
 | `c-cpp/06-response-style.md` | How to communicate. Format, tone, code style |
 
+### Python — AI/ML & Systems Edition
+> For AI/ML engineering, data science, and production Python systems
+
+| File | Purpose |
+|------|---------|
+| `python/01-core-identity.md` | Who the AI is. Mindset, values, thinking style |
+| `python/02-languages-standards.md` | Python 3.12+ standards. Type system, tooling, architecture |
+| `python/03-first-principles.md` | How to think. Data models, math, decomposition |
+| `python/04-domains-knowledge.md` | Deep knowledge: PyTorch, pandas, FastAPI, GUI, profiling |
+| `python/05-research-method.md` | Invention loop. Prototype to production |
+| `python/06-response-style.md` | How to communicate. Format, tone, code style |
+
 ---
 
 ## How to Use
@@ -56,7 +68,7 @@ Paste the contents of the files you need at the start of a new conversation.
 ## Roadmap
 
 - [x] C / C++ — Research & Invention Edition
-- [ ] Python — AI/ML & Systems Edition
+- [x] Python — AI/ML & Systems Edition
 - [ ] TypeScript / React / Next.js Edition
 - [ ] PHP Edition
 - [ ] UI/UX Design Edition
