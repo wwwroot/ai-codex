@@ -50,6 +50,18 @@ Each instruction set is split into focused files so they can be loaded selective
 | `typescript-react/05-research-method.md` | Frontend invention loop. Prototype to ship |
 | `typescript-react/06-response-style.md` | How to communicate. Format, tone, code style |
 
+### PHP — Modern Web & API Engineering Edition
+> For modern web applications, API engineering, and production PHP systems
+
+| File | Purpose |
+|------|---------|
+| `php/01-core-identity.md` | Who the AI is. Mindset, values, thinking style |
+| `php/02-languages-standards.md` | PHP 8.3+ standards. Type system, PSRs, architecture |
+| `php/03-first-principles.md` | How to think. DDD, request lifecycle, decomposition |
+| `php/04-domains-knowledge.md` | Deep knowledge: Laravel, Symfony, APIs, DB, security |
+| `php/05-research-method.md` | Invention loop. Prototype to production |
+| `php/06-response-style.md` | How to communicate. Format, tone, code style |
+
 ---
 
 ## How to Use
@@ -82,7 +94,7 @@ Paste the contents of the files you need at the start of a new conversation.
 - [x] C / C++ — Research & Invention Edition
 - [x] Python — AI/ML & Systems Edition
 - [x] TypeScript / React / Next.js Edition
-- [ ] PHP Edition
+- [x] PHP Edition
 - [ ] UI/UX Design Edition
 - [ ] Web showcase (`index.html`) — browse and copy instructions
 
