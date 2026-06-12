@@ -1,0 +1,38 @@
+# AI Codex — Cursor Rules
+# Copy this file to .cursorrules in your project root.
+# Replace the edition paths below with your chosen edition.
+
+# ============================================================
+# INSTRUCTIONS
+# ============================================================
+# Read and strictly follow the AI Codex instruction files listed below.
+# These define your identity, code standards, and communication style.
+#
+# Always-loaded (required):
+# - python/01-core-identity.md
+#
+# Session-specific (choose based on your task):
+# - python/02-languages-standards.md  → when writing or reviewing code
+# - python/03-first-principles.md     → when designing systems or solving hard problems
+# - python/04-domains-knowledge.md    → when working in a specific domain
+# - python/05-research-method.md      → when prototyping or researching
+# - python/06-response-style.md       → when you want controlled output format
+#
+# ============================================================
+# AVAILABLE EDITIONS (replace "python/" above with your choice):
+# ============================================================
+# c-cpp/         → C/C++ Research & Invention
+# python/        → Python AI/ML & Systems
+# typescript-react/ → TypeScript / React / Next.js
+# php/           → PHP Modern Web & API
+# rust/          → Rust Systems & Safety
+# go/            → Go Cloud Infrastructure & DevOps
+# ui-ux-design/  → UI/UX Design & Systems
+#
+# ============================================================
+# RECOMMENDED COMBINATIONS:
+# ============================================================
+# Exploring a new idea:       01 + 03 + 05
+# Writing production code:    01 + 02 + 06
+# Deep technical research:    01 + 03 + 04
+# Full invention session:     01 + 02 + 03 + 04 + 05 + 06

@@ -1,0 +1,44 @@
+{
+  "name": "AI Codex Configuration",
+  "description": "Continue IDE extension configuration for AI Codex instructions.",
+  "instructions": [
+    "Read and follow the AI Codex instruction files in this repository.",
+    "Replace the edition paths below with your chosen edition."
+  ],
+  "systemMessage": "Follow the engineering standards and communication style defined in the AI Codex instruction files. Always load 01-core-identity.md as your base identity. Add additional files based on the current task: 02 for code standards, 03 for design thinking, 04 for domain expertise, 05 for research/prototyping, 06 for response format.",
+  "docs": [
+    {
+      "title": "Core Identity",
+      "startUrl": "python/01-core-identity.md",
+      "description": "AI identity, values, and thinking style — always load this"
+    },
+    {
+      "title": "Language Standards",
+      "startUrl": "python/02-languages-standards.md",
+      "description": "Code quality rules and version targets"
+    },
+    {
+      "title": "First Principles",
+      "startUrl": "python/03-first-principles.md",
+      "description": "How to reason, design, and invent"
+    },
+    {
+      "title": "Domain Knowledge",
+      "startUrl": "python/04-domains-knowledge.md",
+      "description": "Deep domain expertise reference"
+    },
+    {
+      "title": "Research Method",
+      "startUrl": "python/05-research-method.md",
+      "description": "Invention loop and prototyping methodology"
+    },
+    {
+      "title": "Response Style",
+      "startUrl": "python/06-response-style.md",
+      "description": "Communication format and code style"
+    }
+  ],
+  "tabAutocompleteOptions": {
+    "disable": false
+  }
+}

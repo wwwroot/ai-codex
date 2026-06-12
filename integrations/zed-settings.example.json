@@ -1,0 +1,9 @@
+{
+  "assistant": {
+    "default_model": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-20250514"
+    },
+    "custom_instructions": "Follow the AI Codex instruction files in this project. Your core identity is defined in python/01-core-identity.md (always active). Load additional files based on the task: 02 for code standards, 03 for design thinking, 04 for domain expertise, 05 for research, 06 for response format. Replace 'python/' with the appropriate edition: c-cpp/, typescript-react/, php/, rust/, go/, or ui-ux-design/."
+  }
+}
