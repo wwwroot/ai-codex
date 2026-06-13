@@ -5,7 +5,7 @@
 **Transform any AI assistant into a senior-level engineering partner.**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Editions](https://img.shields.io/badge/Editions-7-brightgreen.svg)](#available-editions)
+[![Editions](https://img.shields.io/badge/Editions-8-brightgreen.svg)](#available-editions)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-orange.svg)](#contributing)
 
 *Not a tutor. Not a code generator. A thinking partner for people who build things that do not exist yet.*
@@ -18,28 +18,31 @@
 
 **AI Codex** is a modular collection of AI system prompt instructions — engineered to transform any AI assistant into a domain-expert engineering partner. Each edition is split into 6 focused files that can be loaded selectively, keeping AI context sharp and precise.
 
+```mermaid
+graph TD
+    classDef default fill:#1f2937,stroke:#374151,color:#f9fafb,stroke-width:1px;
+    classDef main fill:#2563eb,stroke:#3b82f6,color:#fff,font-weight:bold;
+    classDef architecture fill:#10b981,stroke:#059669,color:#fff;
+
+    A[AI Codex]:::main --> B(Editions)
+    A --> C[6-File Modular Architecture]:::architecture
+
+    subgraph Editions [Supported Environments]
+        B --> B1[Systems: C/C++, Rust, Go]
+        B --> B2[Web & App: Python, TS/React, PHP, Java/Kotlin]
+        B --> B3[Design: UI/UX]
+    end
+
+    subgraph Modular Files [Context Control]
+        C --> C1[01 Core Identity]
+        C --> C2[02 Lang Standards]
+        C --> C3[03 First Principles]
+        C --> C4[04 Domain Knowledge]
+        C --> C5[05 Research Method]
+        C --> C6[06 Response Style]
+    end
 ```
-┌──────────────────────────────────────────────────────────────────────────────────┐
-│                               AI  C O D E X                                      │
-│                                                                                  │
-│  ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐  │
-│  │ C/C++  │ │ Python │ │  TS /  │ │  PHP   │ │  Rust  │ │   Go   │ │ UI/UX  │  │
-│  │Research│ │ AI/ML  │ │ React  │ │  Web   │ │ Safety │ │ Cloud  │ │ Design │  │
-│  │Invent. │ │Systems │ │Next.js │ │  API   │ │Systems │ │ DevOps │ │Systems │  │
-│  └───┬────┘ └───┬────┘ └───┬────┘ └───┬────┘ └───┬────┘ └───┬────┘ └───┬────┘  │
-│      └──────────┴──────────┴──────────┴──────────┴──────────┴──────────┘        │
-│                                      │                                          │
-│                             ┌────────┴────────┐                                 │
-│                             │  6 Modular Files │                                 │
-│                             └────────┬────────┘                                 │
-│                                      │                                          │
-│       ┌──────────┬──────────┬────────┴───┬───────────┬──────────┐               │
-│       │    01    │    02    │     03     │    04     │  05 + 06 │               │
-│       │  Core   │  Lang    │   First    │  Domain   │ Research │               │
-│       │Identity │Standards │ Principles │ Knowledge │ + Style  │               │
-│       └──────────┴──────────┴────────────┴───────────┴──────────┘               │
-└──────────────────────────────────────────────────────────────────────────────────┘
-```
+
 
 ---
 
@@ -49,7 +52,7 @@
  YOU                        AI CODEX                        AI ASSISTANT
  ───                        ────────                        ────────────
 
-  "I need to build      ┌─────────────────┐
+  "I need to build       ┌─────────────────┐
    a lock-free queue     │ Select Edition  │
    in Rust"              │ (Rust)          │
         │                └────────┬────────┘
@@ -77,89 +80,18 @@
 
 ## Available Editions
 
-### 🔧 C / C++ — Research & Invention Edition
-> Systems programming, new technology research, and low-level invention
+A single index of all modular prompt editions. Click on an edition to view its detailed documentation, configuration, and capabilities.
 
-| File | Purpose |
-|------|---------|
-| `c-cpp/01-core-identity.md` | Who the AI is. Mindset, values, thinking style |
-| `c-cpp/02-languages-standards.md` | C/C++ and all languages. Code quality rules |
-| `c-cpp/03-first-principles.md` | How to think. Math, physics, logic, invention method |
-| `c-cpp/04-domains-knowledge.md` | Deep knowledge: systems, GPU, AI, compilers, networking |
-| `c-cpp/05-research-method.md` | How to explore unknown territory. Idea to prototype |
-| `c-cpp/06-response-style.md` | How to communicate. Format, tone, code style |
-
-### 🐍 Python — AI/ML & Systems Edition
-> AI/ML engineering, data science, and production Python systems
-
-| File | Purpose |
-|------|---------|
-| `python/01-core-identity.md` | Who the AI is. Mindset, values, thinking style |
-| `python/02-languages-standards.md` | Python 3.12+ standards. Type system, tooling, architecture |
-| `python/03-first-principles.md` | How to think. Data models, math, decomposition |
-| `python/04-domains-knowledge.md` | Deep knowledge: PyTorch, pandas, FastAPI, GUI, profiling |
-| `python/05-research-method.md` | Invention loop. Prototype to production |
-| `python/06-response-style.md` | How to communicate. Format, tone, code style |
-
-### ⚡ TypeScript / React / Next.js Edition
-> Fullstack web applications, React architecture, and modern frontend engineering
-
-| File | Purpose |
-|------|---------|
-| `typescript-react/01-core-identity.md` | Who the AI is. Mindset, values, thinking style |
-| `typescript-react/02-languages-standards.md` | TypeScript strict, React 19+, Next.js 15+ standards |
-| `typescript-react/03-first-principles.md` | Component architecture, state management, performance |
-| `typescript-react/04-domains-knowledge.md` | Deep knowledge: React ecosystem, a11y, testing, DB, auth |
-| `typescript-react/05-research-method.md` | Frontend invention loop. Prototype to ship |
-| `typescript-react/06-response-style.md` | How to communicate. Format, tone, code style |
-
-### 🐘 PHP — Modern Web & API Engineering Edition
-> Modern web applications, API engineering, and production PHP systems
-
-| File | Purpose |
-|------|---------|
-| `php/01-core-identity.md` | Who the AI is. Mindset, values, thinking style |
-| `php/02-languages-standards.md` | PHP 8.3+ standards. Type system, PSRs, architecture |
-| `php/03-first-principles.md` | How to think. DDD, request lifecycle, decomposition |
-| `php/04-domains-knowledge.md` | Deep knowledge: Laravel, Symfony, APIs, DB, security |
-| `php/05-research-method.md` | Invention loop. Prototype to production |
-| `php/06-response-style.md` | How to communicate. Format, tone, code style |
-
-### 🦀 Rust — Systems & Safety Edition
-> Ownership-driven design, zero-cost abstractions, async systems, embedded, and fearless concurrency
-
-| File | Purpose |
-|------|---------|
-| `rust/01-core-identity.md` | Who the AI is. Ownership-first thinking, safety values |
-| `rust/02-languages-standards.md` | Rust 2024 edition. Clippy, cargo config, `unsafe` discipline |
-| `rust/03-first-principles.md` | How to think. Type-driven design, zero-cost abstractions |
-| `rust/04-domains-knowledge.md` | Deep knowledge: Tokio, embedded, WASM, FFI, CLI, crypto |
-| `rust/05-research-method.md` | Compiler-driven development. Type-first prototyping |
-| `rust/06-response-style.md` | How to communicate. Format, tone, code style |
-
-### 🔷 Go — Cloud Infrastructure & DevOps Edition
-> Cloud-native services, Kubernetes operators, CLI tools, and infrastructure automation
-
-| File | Purpose |
-|------|---------|
-| `go/01-core-identity.md` | Who the AI is. Simplicity-first thinking, operational excellence |
-| `go/02-languages-standards.md` | Go 1.22+ standards. Error handling, concurrency, project layout |
-| `go/03-first-principles.md` | How to think. Interface design, error architecture, concurrency |
-| `go/04-domains-knowledge.md` | Deep knowledge: cloud-native, Kubernetes, observability, databases |
-| `go/05-research-method.md` | Interface-first prototyping. Production checklist |
-| `go/06-response-style.md` | How to communicate. Format, tone, code style |
-
-### 🎨 UI/UX Design — Interface & Systems Edition
-> Product design, design systems, accessibility, user research, and cross-platform interfaces
-
-| File | Purpose |
-|------|---------|
-| `ui-ux-design/01-core-identity.md` | Who the AI is. User-centered thinking, design values |
-| `ui-ux-design/02-languages-standards.md` | Design tokens, color system, typography, spacing, components |
-| `ui-ux-design/03-first-principles.md` | Cognitive principles, visual hierarchy, responsive design |
-| `ui-ux-design/04-domains-knowledge.md` | Deep knowledge: design systems, a11y, motion, data viz, research |
-| `ui-ux-design/05-research-method.md` | Design loop. Discover → define → ideate → test → ship |
-| `ui-ux-design/06-response-style.md` | How to communicate. Spec format, wireframe notation |
+| Edition | Primary Focus | Target Stack & Tools | Folder / Docs |
+| :--- | :--- | :--- | :--- |
+| **🔧 C / C++** | Research, low-level systems, new technology invention | Systems, GPU, AI runtimes, compiler design | [`c-cpp/`](c-cpp/SKILL.md) |
+| **🐍 Python** | Production systems, AI/ML engineering, data science | PyTorch, FastAPI, Pandas, Hugging Face, uv | [`python/`](python/SKILL.md) |
+| **⚡ TypeScript / React** | Modern frontend architecture & fullstack applications | React 19, Next.js 15, strict TS, Web ecosystem | [`typescript-react/`](typescript-react/SKILL.md) |
+| **🐘 PHP** | Web apps, backend architecture, modern API design | PHP 8.3+, Laravel, Symfony, PSRs, security | [`php/`](php/SKILL.md) |
+| **🦀 Rust** | Safe systems programming, concurrency, embedded, WASM | Tokio async, Cargo, Clippy, unsafe discipline | [`rust/`](rust/SKILL.md) |
+| **🔷 Go** | Cloud-native microservices, DevOps, CLI tools | Kubernetes, Docker, observability, database drivers | [`go/`](go/SKILL.md) |
+| **☕ Java / Kotlin** | Enterprise backend services, Android apps, microservices | JVM 21, Spring Boot, Compose, Kafka, Kotlin 2.0 | [`java-kotlin/`](java-kotlin/SKILL.md) |
+| **🎨 UI/UX Design** | Product design, design systems, accessibility | Figma, tokens, visual hierarchy, user research | [`ui-ux-design/`](ui-ux-design/SKILL.md) |
 
 ---
 
@@ -364,6 +296,10 @@ ai-codex/
 │   ├── SKILL.md
 │   └── 01 … 06
 │
+├── java-kotlin/                    # Java / Kotlin — Enterprise & Android
+│   ├── SKILL.md
+│   └── 01 … 06
+│
 ├── ui-ux-design/                   # UI/UX Design — Interface & Systems
 │   ├── SKILL.md
 │   └── 01 … 06
@@ -413,16 +349,8 @@ Every edition follows the same structure. This is intentional — it means once 
 
 ## Roadmap
 
-- [x] C / C++ — Research & Invention Edition
-- [x] Python — AI/ML & Systems Edition
-- [x] TypeScript / React / Next.js Edition
-- [x] PHP — Modern Web & API Engineering Edition
-- [x] Rust — Systems & Safety Edition
-- [x] Go — Cloud Infrastructure & DevOps Edition
-- [x] UI/UX Design — Interface & Systems Edition
-- [x] Platform integrations — pre-built config files for all major editors
-- [x] Codex manifest (`codex.json`) — structured metadata for programmatic access
-- [ ] Java / Kotlin — Enterprise & Android Edition
+Upcoming editions planned for future releases:
+
 - [ ] Swift — iOS & macOS Development Edition
 - [ ] C# / .NET — Enterprise & Game Development Edition
 
@@ -464,11 +392,8 @@ Contributions are welcome. If you want to add a new edition, improve an existing
 
 ### Ideas for New Editions
 
-- Go — Cloud Infrastructure & DevOps
-- Java / Kotlin — Enterprise & Android
 - Swift — iOS & macOS Development
 - C# / .NET — Enterprise & Game Development (Unity)
-- UI/UX Design — Interface Architecture & Design Systems
 
 ---
 

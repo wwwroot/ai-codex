@@ -117,6 +117,22 @@
         { "file": "05-research-method.md", "purpose": "Design loop: discover → define → ideate → test → ship" },
         { "file": "06-response-style.md", "purpose": "Spec format, wireframe notation, review patterns" }
       ]
+    },
+    {
+      "id": "java-kotlin",
+      "name": "Java / Kotlin — Enterprise & Android Edition",
+      "description": "Enterprise backend systems, Android applications, microservices, event-driven architecture, and production JVM engineering.",
+      "directory": "java-kotlin",
+      "icon": "☕",
+      "tags": ["enterprise", "android", "spring", "kotlin", "microservices", "jvm"],
+      "files": [
+        { "file": "01-core-identity.md", "purpose": "Identity, values, type-safety-first thinking", "required": true },
+        { "file": "02-languages-standards.md", "purpose": "Java 21+, Kotlin 2.0+ standards, build tooling" },
+        { "file": "03-first-principles.md", "purpose": "Architecture, DI, concurrency models, error handling" },
+        { "file": "04-domains-knowledge.md", "purpose": "Spring Boot, Android/Compose, Kafka, databases, testing" },
+        { "file": "05-research-method.md", "purpose": "Domain-model-first prototyping, production checklist" },
+        { "file": "06-response-style.md", "purpose": "Communication format, code style, references" }
+      ]
     }
   ],
   "combinations": {
