@@ -16,33 +16,11 @@
 
 ## What Is This?
 
-**AI Codex** is a modular collection of AI system prompt instructions — engineered to transform any AI assistant into a domain-expert engineering partner. Each edition is split into 6 focused files that can be loaded selectively, keeping AI context sharp and precise.
+**AI Codex** is a world-class collection of modular AI instructions engineered for invention, research, and building new technology across major programming languages and technical domains.
 
-```mermaid
-graph TD
-    classDef default fill:#1f2937,stroke:#374151,color:#f9fafb,stroke-width:1px;
-    classDef main fill:#2563eb,stroke:#3b82f6,color:#fff,font-weight:bold;
-    classDef architecture fill:#10b981,stroke:#059669,color:#fff;
+It is designed to transform general AI assistants into focused, high-context partners for serious technical work. Rather than relying on one large prompt, AI Codex organizes guidance into specialized editions and reusable instruction files that can be combined based on the task.
 
-    A[AI Codex]:::main --> B(Editions)
-    A --> C[6-File Modular Architecture]:::architecture
-
-    subgraph Editions [Supported Environments]
-        B --> B1[Systems: C/C++, Rust, Go]
-        B --> B2[Web & App: Python, TS/React, PHP, Java/Kotlin]
-        B --> B3[Design: UI/UX]
-    end
-
-    subgraph Modular Files [Context Control]
-        C --> C1[01 Core Identity]
-        C --> C2[02 Lang Standards]
-        C --> C3[03 First Principles]
-        C --> C4[04 Domain Knowledge]
-        C --> C5[05 Research Method]
-        C --> C6[06 Response Style]
-    end
-```
-
+Each edition follows the same 6-file architecture, making it easier to control context, sharpen reasoning, and adapt AI behavior for different kinds of work — from deep technical exploration to production engineering and design systems.
 
 ---
 
@@ -110,157 +88,22 @@ Pick files based on what you are doing — you do not always need all six.
 
 ## Editor & Platform Integrations
 
-### Cursor
+AI Codex works with any editor or AI platform supporting system prompts or custom instructions.
 
-Place instruction files in your project root and reference them in `.cursorrules`:
+Pre-built templates available in [`integrations/`](integrations/README.md):
+- **Cursor** (`.cursorrules`)
+- **Claude Code** (`CLAUDE.md`)
+- **Windsurf** (`.windsurfrules`)
+- **GitHub Copilot** (`copilot-instructions.md`)
+- **Continue** (`config.json`)
+- **Zed** (`settings.json`)
+- *Aider, Cline, Roo Code, JetBrains, ChatGPT, and more...*
 
-```
-# .cursorrules
-Read and follow the instructions in these files:
-- python/01-core-identity.md
-- python/02-languages-standards.md
-- python/06-response-style.md
-```
-
-### Claude Code
-
-Add to your project's `CLAUDE.md` file or use the `--system-prompt` flag:
-
-```bash
-# Option 1: CLAUDE.md (recommended — auto-loaded per project)
-# Create a CLAUDE.md at your project root:
-cat python/01-core-identity.md python/02-languages-standards.md > CLAUDE.md
-
-# Option 2: Direct system prompt
-claude --system-prompt "$(cat python/01-core-identity.md)"
-```
-
-### Kilo Code / Roo Code
-
-Add as custom instructions in the extension settings:
-
-1. Open the Kilo Code / Roo Code sidebar
-2. Go to **Settings** → **Custom Instructions**
-3. Paste the contents of `01-core-identity.md` into the system prompt field
-4. Add additional file contents as needed for your session
-
-### Windsurf
-
-Add to your project's Windsurf rules file:
-
-```
-# .windsurfrules
-Read and follow the instructions in these files:
-- rust/01-core-identity.md
-- rust/02-languages-standards.md
-- rust/04-domains-knowledge.md
-```
-
-### GitHub Copilot
-
-Configure via `.github/copilot-instructions.md` in your repository:
-
-```markdown
-<!-- .github/copilot-instructions.md -->
-<!-- Paste the contents of your chosen instruction files here -->
-<!-- Copilot will use these as context for all suggestions in this repo -->
-```
-
-Or use Copilot Chat's custom instructions in VS Code:
-1. Open VS Code Settings → search "Copilot Instructions"
-2. Point to your instruction files or paste contents directly
-
-### Cline (VS Code Extension)
-
-Add as custom instructions in the Cline settings:
-
-1. Open the Cline sidebar panel
-2. Click the **Settings** gear icon
-3. Under **Custom Instructions**, paste the contents of your chosen files
-4. Cline will use these instructions for all interactions in the workspace
-
-### Continue (VS Code / JetBrains)
-
-Configure in `.continue/config.json`:
-
-```json
-{
-  "systemMessage": "Follow the instructions defined in the AI Codex files.",
-  "docs": [
-    { "title": "Core Identity", "startUrl": "python/01-core-identity.md" },
-    { "title": "Standards", "startUrl": "python/02-languages-standards.md" }
-  ]
-}
-```
-
-### Aider
-
-Pass instruction files as read-only context:
-
-```bash
-# Load AI Codex files as context for your session
-aider --read python/01-core-identity.md \
-      --read python/02-languages-standards.md \
-      --read python/06-response-style.md \
-      your_code.py
-```
-
-### Zed
-
-Add to your project's `.zed/settings.json`:
-
-```json
-{
-  "assistant": {
-    "default_model": {
-      "custom_instructions": "Follow the AI Codex instructions from the c-cpp/ directory in this project."
-    }
-  }
-}
-```
-
-### Amazon Q Developer
-
-Paste instruction contents into the system prompt via:
-1. Open Amazon Q panel in your IDE
-2. Navigate to **Customization** → **System Prompt**
-3. Paste the contents of the relevant instruction files
-
-### JetBrains AI Assistant
-
-Configure in JetBrains IDE settings:
-1. **Settings** → **Tools** → **AI Assistant** → **Custom Prompts**
-2. Create a new custom prompt with the instruction file contents
-3. Set it as the default system prompt for your project
-
-### Augment Code
-
-Add to your workspace configuration:
-1. Open Augment settings in VS Code
-2. Under **Instructions**, add the contents of your chosen files
-3. Instructions persist across sessions for the workspace
-
-### Gemini Code Assist / Antigravity AI
-
-1. Open your Agent or Space settings
-2. Paste `01-core-identity.md` as the base instruction (always)
-3. Add the specific file(s) relevant to your current session
-4. Start building
-
-### ChatGPT / Claude (Web)
-
-Paste the contents of the files you need at the start of a new conversation. For ChatGPT, you can also add them to **Custom Instructions** or a **GPT** configuration.
-
-### Any Other AI Tool
-
-The instruction files are plain Markdown. They work with any AI assistant that accepts a system prompt or custom instructions:
-
-1. Open the system prompt / custom instruction setting
-2. Paste the contents of `01-core-identity.md` (always include this)
-3. Add additional files relevant to your task
-4. Start your session
+👉 **[View Integration Guide & Templates](integrations/README.md)**
 
 ---
+
+
 
 ## Project Structure
 
