@@ -1,9 +1,10 @@
-# AI Codex
-
 <div align="center">
 
-**Transform any AI assistant into a senior-level engineering partner.**
+<img src="assets/ai-codex-banner.png" alt="AI Codex Banner" width="100%">
 
+<br/>
+
+[![NPM Version](https://img.shields.io/npm/v/@wwwroot/ai-codex.svg?style=flat&color=blue)](https://www.npmjs.com/package/@wwwroot/ai-codex)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Editions](https://img.shields.io/badge/Editions-15-brightgreen.svg)](docs/editions.md)
 [![Commands](https://img.shields.io/badge/Commands-10-blueviolet.svg)](docs/commands.md)
