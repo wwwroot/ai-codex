@@ -19,7 +19,7 @@ Rather than running terminal commands manually, paste this exact prompt into you
 Install and configure AI Codex in this project for me. Follow these steps in order:
 
 1. RUNTIME CHECK: Run `node --version`. Verify Node.js 18+ is available.
-2. INITIALIZE: Run `npx ai-codex init` in the current workspace root.
+2. INITIALIZE: Run `npx @wwwroot/ai-codex init` in the current workspace root.
 3. DETECT & CONFIGURE:
    - Allow the CLI to detect the tech stack (Rust, Go, Python, TypeScript, Swift, C#, PHP, Java, C++).
    - Verify that `codex-drive/` (brains/, plans/, specs/, walkthroughs/) is scaffolded.
@@ -36,13 +36,13 @@ Install and configure AI Codex in this project for me. Follow these steps in ord
 To initialize AI Codex directly in your project root:
 
 ```bash
-npx ai-codex init
+npx @wwwroot/ai-codex init
 ```
 
 ### What happens automatically:
 1. **Auto-detects** your programming language and framework (`package.json`, `Cargo.toml`, `go.mod`, `pyproject.toml`, `Package.swift`, `*.csproj`, `pom.xml`, etc.).
 2. **Scaffolds Codex Drive** (`codex-drive/brains/`, `plans/`, `specs/`, `walkthroughs/`).
-3.  **Configures Editor Rules** (`.cursorrules`, `CLAUDE.md`, `.windsurfrules`, `.github/copilot-instructions.md`).
+3. **Configures Editor Rules** (`.cursorrules`, `CLAUDE.md`, `.windsurfrules`, `.github/copilot-instructions.md`).
 
 ---
 
@@ -51,35 +51,35 @@ npx ai-codex init
 ### npm
 ```bash
 # Run on-demand without global install (Recommended)
-npx ai-codex init
+npx @wwwroot/ai-codex init
 
 # Or install globally
-npm install -g ai-codex
+npm install -g @wwwroot/ai-codex
 ai-codex init
 ```
 
 ### pnpm
 ```bash
-pnpm dlx ai-codex init
+pnpm dlx @wwwroot/ai-codex init
 # or global
-pnpm add -g ai-codex
+pnpm add -g @wwwroot/ai-codex
 ```
 
 ### bun
 ```bash
-bunx ai-codex init
+bunx @wwwroot/ai-codex init
 # or global
-bun add -g ai-codex
+bun add -g @wwwroot/ai-codex
 ```
 
 ### yarn
 ```bash
-yarn dlx ai-codex init
+yarn dlx @wwwroot/ai-codex init
 ```
 
 ### deno
 ```bash
-deno run --allow-read --allow-write --allow-env npm:ai-codex init
+deno run --allow-read --allow-write --allow-env npm:@wwwroot/ai-codex init
 ```
 
 ---

@@ -28,7 +28,7 @@ Rather than relying on one monolithic prompt, AI Codex organizes domain knowledg
 Install and scaffold AI Codex in any workspace in 3 seconds:
 
 ```bash
-npx ai-codex init
+npx @wwwroot/ai-codex init
 ```
 
 - **Auto-Stack Detection**: Identifies Rust, Go, Elixir, Zig, SQL/Databases, Solidity/Web3, Flutter/Dart, Python, TypeScript, Swift, C#, PHP, Java/Kotlin, C/C++.

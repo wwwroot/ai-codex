@@ -1,11 +1,20 @@
 {
-  "name": "ai-codex",
+  "name": "@wwwroot/ai-codex",
   "version": "1.0.0",
   "description": "Modular AI instructions and autonomous engineering skills for Cursor, Claude Code, Windsurf, Copilot, and Gemini.",
   "main": "bin/ai-codex.js",
   "bin": {
-    "ai-codex": "./bin/ai-codex.js"
+    "ai-codex": "bin/ai-codex.js"
   },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wwwroot/ai-codex.git"
+  },
+  "author": "wwwroot (https://github.com/wwwroot)",
+  "license": "MIT",
   "type": "module",
   "scripts": {
     "validate": "python scripts/validate.py",
