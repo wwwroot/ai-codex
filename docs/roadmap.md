@@ -1,35 +1,31 @@
 # Project Roadmap
 
-> Planned releases, upcoming language editions, and feature horizons for **AI Codex**.
+> Planned releases, future horizons, and ecosystem milestones for **AI Codex**.
 
 ---
 
-## Current Release: v1.0.0 (Official Global Launch)
+## Current Release: v1.0.x (Active Production)
 
-- [x] **15 Core Domain Editions**: C/C++, Python, TypeScript/React, PHP, Rust, Go, Java/Kotlin, UI/UX Design, Swift, C#/.NET, Elixir/OTP, Zig, SQL & Database, Solidity/Web3, Flutter/Dart.
-- [x] **10 Autonomous AI Command Skills**: `/codex-start`, `/codex-plans`, `/codex-architecture`, `/codex-skills`, `/codex-deep`, `/codex-debug`, `/codex-test`, `/codex-review`, `/codex-goal`, `/codex-brain`.
-- [x] **Interactive CLI Terminal UI & Diagnostics**: `npx ai-codex init`, `status`, `doctor`, and auto-stack configuration.
-- [x] **Automated GitHub Action (`action.yml`)**: Continuous integration audit for `codex-drive/` artifacts and Senior Decision Ladder compliance.
-- [x] **Codex Marketplace Registry (`docs/marketplace.md`)**: Community skill distribution, `/codex-skills install`, and decentralized packaging.
-- [x] **Codex Drive Externalized Memory**: `codex-drive/brains/`, `plans/`, `specs/`, `walkthroughs/`, `archive/`.
-- [x] **Senior Decision Ladder**: 7-rung anti-overengineering and YAGNI evaluation protocol.
-- [x] **Universal Tool Compatibility**: Native support across 38+ AI assistants and IDE environments.
+- **15 Core Domain Editions**: Production-grade architecture rules and first-principles across 15 engineering domains.
+- **Multi-Editor Dual Delivery**: Native skill directories and slash command generation across Cursor, Claude Code, Google Antigravity, GitHub Copilot, Windsurf, Devin, Cline, Roo, Continue, and Zed.
+- **10 Autonomous AI Command Skills**: `/codex-start`, `/codex-plans`, `/codex-architecture`, `/codex-skills`, `/codex-deep`, `/codex-debug`, `/codex-test`, `/codex-review`, `/codex-goal`, `/codex-brain`.
+- **Codex Drive Externalized Memory**: Persistent engineering brain snapshots, timestamped implementation plans, and architecture specifications.
+- **Senior Decision Ladder**: 7-rung YAGNI anti-overengineering and verification discipline.
+- **Official NPM Distribution**: Global one-command initialization via `npx @wwwroot/ai-codex init`.
 
 ---
 
-## Releases & Milestone History
+## Upcoming Milestones & Horizons
 
-### Milestone 1: Expanded Domain Editions (Completed!)
-- [x] **Elixir / OTP Edition**: Distributed systems, supervision trees, Phoenix LiveView, BEAM internals, and fault-tolerant concurrency.
-- [x] **Zig Edition**: Explicit memory management, custom allocators, comptime metaprogramming, and cross-compilation toolchains.
-- [x] **SQL & Database Engineering Edition**: Query execution plans, index tuning, isolation levels, partitioning, and schema migrations (PostgreSQL / MySQL).
-- [x] **Solidity & Web3 Systems Edition**: EVM gas optimization, reentrancy guards, formal verification, and smart contract security.
-- [x] **Flutter / Dart Edition**: Multi-platform UI, BLoC / Riverpod state architecture, and native rendering pipelines.
+### Milestone 1: Toolchain & Workspace Automation (v1.1.0)
+- [ ] **Automated Skill Sync & Updates**: `npx @wwwroot/ai-codex update` command to sync living repository skills with latest upstream editions.
+- [ ] **LSP & Linter Integration Hooks**: Native bridge connecting Codex validation rules directly with ESLint, Rust Clippy, Ruff, and PHPStan.
+- [ ] **Custom Domain Authoring Wizard**: Interactive CLI generator for creating custom company/team domain editions.
 
-### Milestone 2: Ecosystem & Developer Tooling (Completed!)
-- [x] **Interactive CLI Terminal UI**: Rich TUI for selecting editions, inspecting status, and customizing multi-tool configurations.
-- [x] **Automated GitHub Action**: CI action to automatically validate `codex-drive/` artifacts and enforce architecture standards on PRs.
-- [x] **Codex Marketplace Registry**: Community-driven repository and `/codex-skills install` workflow for sharing custom project skills.
+### Milestone 2: Ecosystem & Extension Integration (v1.2.0)
+- [ ] **IDE Visual Extensions**: Dedicated extensions for Visual Studio Code, Cursor, and JetBrains IDEs.
+- [ ] **Decentralized Team Skill Registry**: Private team skill distribution and authentication protocols.
+- [ ] **Semantic Brain Search**: Vector-indexed retrieval over historical `codex-drive/brains/` decision logs.
 
 ---
 

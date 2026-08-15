@@ -26,7 +26,7 @@ const ANSI = {
 
 const BANNER = `
 ${ANSI.cyan}${ANSI.bold}╔════════════════════════════════════════════════════════════╗
-║                      AI CODEX                        ║
+║                      AI CODEX                              ║
 ║     Modular AI Instructions & Autonomous Command Skills    ║
 ╚════════════════════════════════════════════════════════════╝${ANSI.reset}
 `;
@@ -154,29 +154,80 @@ function parseArgs(args) {
 }
 
 function detectTechStack(targetDir) {
+  // 1. High-priority composite architectures
+  // Tauri (Rust + TypeScript/React)
+  if (fs.existsSync(path.join(targetDir, "src-tauri/Cargo.toml")) || fs.existsSync(path.join(targetDir, "src-tauri/tauri.conf.json"))) {
+    return { file: "src-tauri/Cargo.toml", edition: "rust", name: "Rust (Tauri Desktop App)" };
+  }
+
+  // 2. Comprehensive Stack & Framework Marker List
   const checks = [
+    // Rust
     { file: "Cargo.toml", edition: "rust", name: "Rust (Cargo)" },
+    { file: "backend/Cargo.toml", edition: "rust", name: "Rust (backend/Cargo.toml)" },
+    { file: "server/Cargo.toml", edition: "rust", name: "Rust (server/Cargo.toml)" },
+
+    // Go
     { file: "go.mod", edition: "go", name: "Go (Go Modules)" },
+    { file: "backend/go.mod", edition: "go", name: "Go (backend/go.mod)" },
+    { file: "server/go.mod", edition: "go", name: "Go (server/go.mod)" },
+
+    // Solidity / Web3
+    { file: "foundry.toml", edition: "solidity-web3", name: "Solidity / Foundry" },
+    { file: "hardhat.config.ts", edition: "solidity-web3", name: "Solidity / Hardhat (TS)" },
+    { file: "hardhat.config.js", edition: "solidity-web3", name: "Solidity / Hardhat (JS)" },
+    { file: "contracts", edition: "solidity-web3", name: "Solidity (contracts/)" },
+
+    // Elixir
     { file: "mix.exs", edition: "elixir", name: "Elixir / OTP (Mix)" },
+
+    // Zig
     { file: "build.zig", edition: "zig", name: "Zig (build.zig)" },
     { file: "build.zig.zon", edition: "zig", name: "Zig (Zig Package)" },
-    { file: "Package.swift", edition: "swift", name: "Swift (Apple Platforms)" },
-    { file: "pyproject.toml", edition: "python", name: "Python (Modern)" },
-    { file: "requirements.txt", edition: "python", name: "Python (pip)" },
+
+    // Flutter / Dart
+    { file: "pubspec.yaml", edition: "flutter-dart", name: "Flutter & Dart (pubspec.yaml)" },
+
+    // Swift
+    { file: "Package.swift", edition: "swift", name: "Swift (Package.swift)" },
+
+    // Python
+    { file: "pyproject.toml", edition: "python", name: "Python (pyproject.toml)" },
+    { file: "requirements.txt", edition: "python", name: "Python (pip requirements)" },
+    { file: "Pipfile", edition: "python", name: "Python (Pipfile)" },
+    { file: "manage.py", edition: "python", name: "Python (Django manage.py)" },
+    { file: "backend/pyproject.toml", edition: "python", name: "Python (backend/pyproject.toml)" },
+    { file: "backend/requirements.txt", edition: "python", name: "Python (backend/requirements.txt)" },
+
+    // PHP / Laravel
+    { file: "artisan", edition: "php", name: "PHP (Laravel Artisan)" },
     { file: "composer.json", edition: "php", name: "PHP (Composer)" },
-    { file: "pom.xml", edition: "java-kotlin", name: "Java / Kotlin (Maven)" },
-    { file: "build.gradle.kts", edition: "java-kotlin", name: "Java / Kotlin (Gradle)" },
+    { file: "backend/composer.json", edition: "php", name: "PHP (backend/composer.json)" },
+
+    // Java / Kotlin
+    { file: "pom.xml", edition: "java-kotlin", name: "Java / Kotlin (Maven pom.xml)" },
+    { file: "build.gradle.kts", edition: "java-kotlin", name: "Java / Kotlin (Gradle kts)" },
     { file: "build.gradle", edition: "java-kotlin", name: "Java / Kotlin (Gradle)" },
-    { file: "package.json", edition: "typescript-react", name: "TypeScript / React / Next.js" },
+    { file: "android/build.gradle", edition: "java-kotlin", name: "Java / Kotlin (Android)" },
+
+    // C / C++
     { file: "CMakeLists.txt", edition: "c-cpp", name: "C / C++ (CMake)" },
-    { file: "schema.sql", edition: "sql-database", name: "SQL & Database Engineering" },
-    { file: "drizzle.config.ts", edition: "sql-database", name: "SQL / Drizzle ORM" },
-    { file: "prisma/schema.prisma", edition: "sql-database", name: "SQL / Prisma Database" },
-    { file: "alembic.ini", edition: "sql-database", name: "SQL / Alembic Migrations" },
-    { file: "foundry.toml", edition: "solidity-web3", name: "Solidity / Foundry" },
-    { file: "hardhat.config.ts", edition: "solidity-web3", name: "Solidity / Hardhat" },
-    { file: "hardhat.config.js", edition: "solidity-web3", name: "Solidity / Hardhat" },
-    { file: "pubspec.yaml", edition: "flutter-dart", name: "Flutter & Dart (pubspec)" },
+    { file: "meson.build", edition: "c-cpp", name: "C / C++ (Meson)" },
+
+    // SQL / Databases
+    { file: "drizzle.config.ts", edition: "sql-database", name: "SQL (Drizzle ORM)" },
+    { file: "prisma/schema.prisma", edition: "sql-database", name: "SQL (Prisma Database)" },
+    { file: "alembic.ini", edition: "sql-database", name: "SQL (Alembic Migrations)" },
+    { file: "schema.sql", edition: "sql-database", name: "SQL (schema.sql)" },
+
+    // TypeScript / React / Next.js
+    { file: "next.config.js", edition: "typescript-react", name: "TypeScript / Next.js (React)" },
+    { file: "next.config.ts", edition: "typescript-react", name: "TypeScript / Next.js (TS)" },
+    { file: "next.config.mjs", edition: "typescript-react", name: "TypeScript / Next.js (mjs)" },
+    { file: "vite.config.ts", edition: "typescript-react", name: "TypeScript / Vite (React)" },
+    { file: "vite.config.js", edition: "typescript-react", name: "TypeScript / Vite (JS)" },
+    { file: "tsconfig.json", edition: "typescript-react", name: "TypeScript (tsconfig.json)" },
+    { file: "package.json", edition: "typescript-react", name: "TypeScript / React / Next.js (package.json)" },
   ];
 
   for (const check of checks) {
@@ -185,13 +236,13 @@ function detectTechStack(targetDir) {
     }
   }
 
-  // Check for .csproj / .sln
+  // Check for .csproj / .sln (C# / .NET)
   try {
     const files = fs.readdirSync(targetDir);
     if (files.some(f => f.endsWith(".csproj") || f.endsWith(".sln"))) {
       return { file: "*.csproj", edition: "csharp-dotnet", name: "C# / .NET" };
     }
-  } catch {}
+  } catch { }
 
   return { file: null, edition: "typescript-react", name: "General / TypeScript (Default)" };
 }
@@ -255,12 +306,47 @@ function parseSkillMd(skillPath) {
     return { name: "", description: "AI Codex Skill", body: "" };
   }
   const content = fs.readFileSync(skillPath, "utf-8");
-  const nameMatch = content.match(/name:\s*(?:"([^"]+)"|'([^']+)'|([^\n]+))/);
-  const descMatch = content.match(/description:\s*(?:"([^"]+)"|'([^']+)'|([^\n]+))/);
 
-  const name = nameMatch ? (nameMatch[1] || nameMatch[2] || nameMatch[3]).trim() : "";
-  const description = descMatch ? (descMatch[1] || descMatch[2] || descMatch[3]).trim() : "AI Codex Command Skill";
-  const body = content.replace(/^---[\s\S]*?---\s*/, "");
+  const frontmatterMatch = content.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
+  if (!frontmatterMatch) {
+    return { name: "", description: "AI Codex Skill", body: content };
+  }
+
+  const frontmatter = frontmatterMatch[1];
+  const body = frontmatterMatch[2].trim();
+
+  let name = "";
+  let description = "AI Codex Command Skill";
+
+  const fmLines = frontmatter.split(/\r?\n/);
+  let collectingDesc = false;
+  let descLines = [];
+
+  for (const line of fmLines) {
+    const trimmed = line.trim();
+    if (/^name:\s*/i.test(trimmed)) {
+      collectingDesc = false;
+      name = trimmed.replace(/^name:\s*/i, "").replace(/^["']|["']$/g, "").trim();
+    } else if (/^description:\s*/i.test(trimmed)) {
+      collectingDesc = true;
+      descLines = [];
+      const afterKey = trimmed.replace(/^description:\s*/i, "").trim();
+      if (afterKey && afterKey !== ">" && afterKey !== "|" && afterKey !== ">-" && afterKey !== "|-") {
+        descLines.push(afterKey.replace(/^["']|["']$/g, ""));
+      }
+    } else if (collectingDesc) {
+      if (/^[a-zA-Z0-9_-]+:\s*/.test(line)) {
+        // Next key in frontmatter encountered
+        collectingDesc = false;
+      } else if (trimmed.length > 0) {
+        descLines.push(trimmed);
+      }
+    }
+  }
+
+  if (descLines.length > 0) {
+    description = descLines.join(" ").replace(/"/g, '\\"').replace(/\s+/g, " ").trim();
+  }
 
   return { name, description, body };
 }
@@ -345,28 +431,11 @@ function installToolsAndSkills(targetDir, editionId, selectedToolIds) {
 
   const skillsSrc = path.join(REPO_ROOT, "skills");
 
-  // 1. Install to Workspace Root `skills/` (Canonical source)
-  if (fs.existsSync(skillsSrc)) {
-    for (const cmd of COMMAND_SKILLS) {
-      const src = path.join(skillsSrc, cmd);
-      const dest = path.join(targetDir, "skills", cmd);
-      if (fs.existsSync(src)) {
-        copyDirSync(src, dest);
-      }
-    }
-    if (editionId && editionId !== "none" && editionId !== "general") {
-      const edSrc = path.join(skillsSrc, "codex", editionId);
-      const edDest = path.join(targetDir, "skills", "codex", editionId);
-      if (fs.existsSync(edSrc)) {
-        copyDirSync(edSrc, edDest);
-      }
-    }
-    console.log(`  ${ANSI.green}[OK]${ANSI.reset} Installed canonical ${ANSI.bold}skills/${ANSI.reset} directory (10 command skills${editionId && editionId !== "none" ? ` + ${editionId}` : ""})`);
-  }
-
-  // 2. Install Tool-Specific Rule Files, Skills, and Slash Commands
+  // Install Tool-Specific Rule Files, Skills, and Slash Commands into each tool's directory
   for (const tool of tools) {
     console.log(`\n  ${ANSI.cyan}${ANSI.bold}• Configuring ${tool.name.split(" ")[0]}...${ANSI.reset}`);
+
+    const toolSkillsPrefix = tool.skillsDir ? `${tool.skillsDir}/` : "skills/";
 
     // (A) Rule File Generation
     if (tool.ruleSrc && tool.ruleTarget) {
@@ -378,10 +447,11 @@ function installToolsAndSkills(targetDir, editionId, selectedToolIds) {
           fs.mkdirSync(destDir, { recursive: true });
         }
         let content = fs.readFileSync(srcPath, "utf-8");
-        const replaceTarget = (editionId && editionId !== "none" && editionId !== "general")
-          ? `${editionId}/`
-          : "";
-        content = content.replaceAll("python/", replaceTarget);
+        const targetEdition = (editionId && editionId !== "none" && editionId !== "general")
+          ? `${toolSkillsPrefix}codex/${editionId}/`
+          : `${toolSkillsPrefix}`;
+
+        content = content.replace(/(?:skills\/codex\/[a-zA-Z0-9_-]+\/|python\/)/g, targetEdition);
         fs.writeFileSync(destPath, content, "utf-8");
         console.log(`    ${ANSI.green}[OK]${ANSI.reset} Rule file: ${ANSI.bold}${tool.ruleTarget}${ANSI.reset}`);
       }
@@ -403,7 +473,7 @@ function installToolsAndSkills(targetDir, editionId, selectedToolIds) {
           copyDirSync(edSrc, edDest);
         }
       }
-      console.log(`    ${ANSI.green}[OK]${ANSI.reset} Native skills: ${ANSI.bold}${tool.skillsDir}/${ANSI.reset}`);
+      console.log(`    ${ANSI.green}[OK]${ANSI.reset} Native skills: ${ANSI.bold}${tool.skillsDir}/${ANSI.reset} (10 command skills${editionId && editionId !== "none" ? ` + ${editionId}` : ""})`);
     }
 
     // (C) Tool-Specific Native Slash Commands / Workflows / Prompts
@@ -460,7 +530,7 @@ async function promptInteractive(detected, options) {
     try {
       const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
       editions = manifest.editions || [];
-    } catch {}
+    } catch { }
   }
 
   console.log(`\n${ANSI.bold}=== INTERACTIVE WORKSPACE CONFIGURATION ===${ANSI.reset}`);
@@ -550,15 +620,17 @@ async function runInit(args) {
   console.log(`
 ${ANSI.green}${ANSI.bold}AI Codex successfully initialized!${ANSI.reset}
 
+${ANSI.yellow}${ANSI.bold}[NOTE] Please restart or reload your editor / IDE to activate the newly generated slash commands and skills.${ANSI.reset}
+
 ${ANSI.bold}HOW TO USE IN YOUR AI CHAT (Cursor, Claude Code, Windsurf, Copilot, Gemini CLI):${ANSI.reset}
   1. Start any new task:        ${ANSI.cyan}/codex-start [your request]${ANSI.reset}
   2. Plan technical changes:    ${ANSI.cyan}/codex-plans [feature details]${ANSI.reset}
   3. Model system architecture:  ${ANSI.cyan}/codex-architecture [subsystem]${ANSI.reset}
   4. Save persistent memory:    ${ANSI.cyan}/codex-brain save${ANSI.reset}
 
-${ANSI.bold}DOCUMENTATION:${ANSI.reset}
-  • Installation Guide:  ${ANSI.cyan}docs/installation.md${ANSI.reset}
-  • Supported Tools:     ${ANSI.cyan}docs/supported-tools.md${ANSI.reset}
+${ANSI.bold}ONLINE DOCUMENTATION:${ANSI.reset}
+  • GitHub:  ${ANSI.cyan}https://github.com/wwwroot/ai-codex${ANSI.reset}
+  • NPM:     ${ANSI.cyan}https://www.npmjs.com/package/@wwwroot/ai-codex${ANSI.reset}
 `);
 }
 
@@ -603,7 +675,7 @@ function runList() {
   const manifestPath = path.join(REPO_ROOT, "codex.json");
   if (fs.existsSync(manifestPath)) {
     const manifest = JSON.parse(fs.readFileSync(manifestPath, "utf-8"));
-    
+
     console.log(`${ANSI.bold}AVAILABLE DOMAIN EDITIONS (${manifest.editions.length}):${ANSI.reset}`);
     for (const ed of manifest.editions) {
       console.log(`  • ${ANSI.bold}${ed.name}${ANSI.reset} (${ANSI.cyan}${ed.id}${ANSI.reset})`);
@@ -621,11 +693,11 @@ function runList() {
 const args = process.argv.slice(2);
 const command = args[0] || "help";
 
-let pkgVersion = "1.0.2";
+let pkgVersion = "1.0.3";
 try {
   const pkg = JSON.parse(fs.readFileSync(path.join(REPO_ROOT, "package.json"), "utf-8"));
-  pkgVersion = pkg.version || "1.0.2";
-} catch {}
+  pkgVersion = pkg.version || "1.0.3";
+} catch { }
 
 switch (command) {
   case "init":

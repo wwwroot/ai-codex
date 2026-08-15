@@ -1,6 +1,6 @@
 {
   "name": "@wwwroot/ai-codex",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Modular AI instructions and autonomous engineering skills for Cursor, Claude Code, Windsurf, Copilot, and Gemini.",
   "main": "bin/ai-codex.js",
   "bin": {

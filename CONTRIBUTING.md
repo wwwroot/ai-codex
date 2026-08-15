@@ -37,15 +37,15 @@ When authoring a new domain edition in `skills/codex/<name>/`:
 
 ---
 
-## Priority Wishlist for New Editions
+## Future Edition Wishlist & Exploration
 
-We are actively seeking contributions for the following editions:
+We are open to RFC proposals and community contributions for specialized domains:
 
-- **Elixir / OTP**: Distributed systems, BEAM internals, supervision trees, Phoenix LiveView.
-- **Zig**: Systems programming, memory allocators, comptime metaprogramming, cross-compilation.
-- **SQL & Database Engineering**: Query optimization, index internals, isolation levels, partitioning.
-- **Solidity & Web3**: EVM gas optimization, formal verification, reentrancy guards, DeFi security.
-- **Flutter / Dart**: Cross-platform UI architecture, reactive state management, native engine bridges.
+- **Embedded Systems & Firmware**: Bare-metal C/Rust, RTOS (FreeRTOS, Zephyr), memory-mapped registers, HAL design.
+- **Game Engine & Graphics**: Unreal Engine C++, Unity C#, Godot GDScript/Rust, Vulkan/DirectX pipelines.
+- **Data Engineering & Distributed Analytics**: Apache Spark, Flink, DuckDB, Polars, data warehouse modeling.
+- **Functional Programming**: Haskell, OCaml, Scala 3, category theory and algebraic data modeling.
+- **Scientific Computing & Biotech**: Julia, R, high-performance numerical and bioinformatics pipelines.
 
 ---
 
