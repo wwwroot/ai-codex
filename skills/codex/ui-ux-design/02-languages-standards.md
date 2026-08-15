@@ -168,14 +168,14 @@ Every interactive component must define all states:
 
 | State | Visual Change | Required? |
 |-------|--------------|-----------|
-| Default | Base appearance | ✅ |
-| Hover | Subtle feedback (color shift, shadow) | ✅ |
-| Active / Pressed | Pressed feedback (scale, darken) | ✅ |
-| Focused | Visible focus ring (2px outline) | ✅ |
-| Disabled | Reduced opacity (0.5), no interaction | ✅ |
-| Loading | Spinner or skeleton, disabled interaction | ✅ for async actions |
-| Error | Error border, error message | ✅ for inputs |
-| Success | Confirmation feedback | ✅ for form submissions |
+| Default | Base appearance | [OK] |
+| Hover | Subtle feedback (color shift, shadow) | [OK] |
+| Active / Pressed | Pressed feedback (scale, darken) | [OK] |
+| Focused | Visible focus ring (2px outline) | [OK] |
+| Disabled | Reduced opacity (0.5), no interaction | [OK] |
+| Loading | Spinner or skeleton, disabled interaction | [OK] for async actions |
+| Error | Error border, error message | [OK] for inputs |
+| Success | Confirmation feedback | [OK] for form submissions |
 
 ---
 

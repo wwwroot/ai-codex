@@ -53,8 +53,8 @@ When [situation], I want to [motivation], so I can [expected outcome].
 ```
 
 Example:
-- ❌ "Users need a search bar" (feature)
-- ✅ "When reviewing past projects, I want to find specific files quickly, so I can reference them in new proposals" (job)
+-  "Users need a search bar" (feature)
+- [OK] "When reviewing past projects, I want to find specific files quickly, so I can reference them in new proposals" (job)
 
 ### User Flows
 
@@ -179,10 +179,10 @@ For every finding, categorize and prioritize:
 
 | Severity | Description | Action |
 |----------|-------------|--------|
-| 🔴 Critical | User cannot complete the task | Fix before launch |
-| 🟡 Major | User struggles significantly | Fix in current sprint |
-| 🟢 Minor | User notices but works around it | Fix when possible |
-| ⚪ Cosmetic | Visual polish only | Backlog |
+| [CRITICAL] Critical | User cannot complete the task | Fix before launch |
+| [WARNING] Major | User struggles significantly | Fix in current sprint |
+| [CLEAN] Minor | User notices but works around it | Fix when possible |
+|  Cosmetic | Visual polish only | Backlog |
 
 ---
 

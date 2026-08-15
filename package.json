@@ -1,0 +1,32 @@
+{
+  "name": "ai-codex",
+  "version": "1.0.0",
+  "description": "Modular AI instructions and autonomous engineering skills for Cursor, Claude Code, Windsurf, Copilot, and Gemini.",
+  "main": "bin/ai-codex.js",
+  "bin": {
+    "ai-codex": "./bin/ai-codex.js"
+  },
+  "type": "module",
+  "scripts": {
+    "validate": "python scripts/validate.py",
+    "test": "node bin/ai-codex.js --help"
+  },
+  "keywords": [
+    "ai",
+    "ai-agent",
+    "skills",
+    "system-prompts",
+    "cursorrules",
+    "claude-code",
+    "windsurf",
+    "copilot",
+    "prompt-engineering",
+    "engineering"
+  ],
+  "author": "AI Codex Contributors",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wwwroot/ai-codex.git"
+  }
+}

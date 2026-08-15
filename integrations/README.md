@@ -24,8 +24,9 @@ Each template in this directory is ready to copy into your project. Replace the 
 3. Replace `python/` paths with your chosen edition (e.g., `rust/`, `go/`, `c-cpp/`)
 4. Adjust the file selection based on your session needs
 
-## Notes
-
 - All templates assume the AI Codex files are at the root of your repository
-- If you've cloned AI Codex as a submodule, adjust the paths accordingly
-- See the main [README](../README.md) for recommended file combinations
+- For 1-command automated installation, run `npx ai-codex init`
+- Comprehensive Guides:
+  - **[Installation Guide](../docs/installation.md)**
+  - **[Supported Tools Matrix (30+ Tools)](../docs/supported-tools.md)**
+  -  **[Main README](../README.md)**

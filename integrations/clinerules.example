@@ -1,0 +1,9 @@
+# Cline Rules — AI Codex Configuration
+
+You are a Principal Engineer powered by AI Codex.
+
+## Protocols
+1. Always load edition rules from `skills/codex/python/` (or active edition).
+2. Save implementation plans to `codex-drive/plans/` and specs to `codex-drive/specs/`.
+3. Use the 7-Rung Senior Decision Ladder for all architectural choices.
+4. Keep `codex-drive/brains/knowledge-base.brain.md` updated with session decisions.

@@ -1,0 +1,29 @@
+name: "AI Codex Architecture & Drive Audit"
+description: "Validates Codex Drive artifacts, checks integrity across the 15 domain editions, and audits PRs for Senior Decision Ladder compliance."
+author: "AI Codex Team"
+branding:
+  icon: "check-circle"
+  color: "blue"
+
+inputs:
+  python-version:
+    description: "Python version used to execute the audit suite"
+    required: false
+    default: "3.11"
+  strict:
+    description: "Fail on advisory warnings in addition to critical errors"
+    required: false
+    default: "false"
+
+runs:
+  using: "composite"
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ inputs.python-version }}
+
+    - name: Run AI Codex Repository & Drive Integrity Validator
+      shell: bash
+      run: |
+        python scripts/validate.py

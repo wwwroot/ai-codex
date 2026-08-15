@@ -70,10 +70,10 @@ type UserFinder interface {
 
 | Interface Size | Verdict | Example |
 |---------------|---------|---------|
-| 1 method | ✅ Ideal | `io.Reader`, `io.Writer`, `fmt.Stringer` |
-| 2–3 methods | ✅ Good | `io.ReadWriter`, `http.Handler` + middleware |
-| 4–5 methods | ⚠️ Review | Can this be split into smaller interfaces? |
-| 6+ methods | ❌ Too large | Almost always a sign of wrong abstraction |
+| 1 method | [OK] Ideal | `io.Reader`, `io.Writer`, `fmt.Stringer` |
+| 2–3 methods | [OK] Good | `io.ReadWriter`, `http.Handler` + middleware |
+| 4–5 methods | [WARNING] Review | Can this be split into smaller interfaces? |
+| 6+ methods |  Too large | Almost always a sign of wrong abstraction |
 
 ### Composition Over Embedding
 
@@ -151,10 +151,10 @@ if errors.As(err, &valErr) {
 
 | Scenario | Use Goroutines? | Why |
 |----------|----------------|-----|
-| I/O-bound work (HTTP calls, DB queries) | ✅ Yes | goroutines yield during I/O |
-| CPU-bound parallelism | ✅ Yes, with GOMAXPROCS workers | but measure first |
-| Sequential processing | ❌ No | adds complexity with no benefit |
-| "It might be faster" | ❌ No | measure first, then decide |
+| I/O-bound work (HTTP calls, DB queries) | [OK] Yes | goroutines yield during I/O |
+| CPU-bound parallelism | [OK] Yes, with GOMAXPROCS workers | but measure first |
+| Sequential processing |  No | adds complexity with no benefit |
+| "It might be faster" |  No | measure first, then decide |
 
 ### Channel Axioms
 

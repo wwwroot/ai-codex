@@ -29,7 +29,10 @@ Replace `python/` above with any of these:
 | PHP | `php/` | Modern web, APIs, Laravel/Symfony |
 | Rust | `rust/` | Systems, safety, async, embedded |
 | Go | `go/` | Cloud infrastructure, DevOps, microservices |
+| Java / Kotlin | `java-kotlin/` | Enterprise backend, Android, JVM |
 | UI/UX | `ui-ux-design/` | Product design, design systems, a11y |
+| Swift | `swift/` | iOS, macOS, visionOS, SwiftUI, Apple Silicon |
+| C# / .NET | `csharp-dotnet/` | Cloud microservices, zero-alloc, Unity/Godot |
 
 ## Recommended Combinations
 

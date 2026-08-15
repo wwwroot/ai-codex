@@ -1,164 +1,789 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "name": "AI Codex",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A modular collection of AI system prompt instructions engineered for invention, research, and building new technology — across every major programming language and domain.",
   "license": "MIT",
-  "repository": "https://github.com/your-username/ai-codex",
+  "repository": "https://github.com/wwwroot/ai-codex",
+  "drive": {
+    "root": "codex-drive",
+    "plans": "codex-drive/plans",
+    "specs": "codex-drive/specs",
+    "walkthroughs": "codex-drive/walkthroughs",
+    "brains": "codex-drive/brains",
+    "fileFormat": ".md",
+    "namingConvention": "YYYY-MM-DD-<slug>.<type>.md"
+  },
+  "commands": [
+    {
+      "id": "codex-start",
+      "command": "/codex-start",
+      "directory": "skills/codex-start",
+      "description": "Project onboarding, stack auto-detection, brain memory resumption, and workspace initialization scaffolding."
+    },
+    {
+      "id": "codex-plans",
+      "command": "/codex-plans",
+      "directory": "skills/codex-plans",
+      "description": "Deep technical planning, requirement decomposition, and risk-mitigated implementation blueprints."
+    },
+    {
+      "id": "codex-architecture",
+      "command": "/codex-architecture",
+      "directory": "skills/codex-architecture",
+      "description": "Domain-driven design, system boundaries, and component architectural specifications."
+    },
+    {
+      "id": "codex-brain",
+      "command": "/codex-brain",
+      "directory": "skills/codex-brain",
+      "description": "Persistent AI memory manager, session checkpoint snapshots, context restoration, and repository knowledge memory."
+    },
+    {
+      "id": "codex-debug",
+      "command": "/codex-debug",
+      "directory": "skills/codex-debug",
+      "description": "Root-cause isolation, crash log analysis, memory leak tracing, and troubleshooting."
+    },
+    {
+      "id": "codex-deep",
+      "command": "/codex-deep",
+      "directory": "skills/codex-deep",
+      "description": "First-principles research, mathematics, physics, and algorithm invention."
+    },
+    {
+      "id": "codex-goal",
+      "command": "/codex-goal",
+      "directory": "skills/codex-goal",
+      "description": "Long-running autonomous loop execution with thorough self-auditing."
+    },
+    {
+      "id": "codex-review",
+      "command": "/codex-review",
+      "directory": "skills/codex-review",
+      "description": "Senior peer code review, security vulnerability audit, and performance checks."
+    },
+    {
+      "id": "codex-test",
+      "command": "/codex-test",
+      "directory": "skills/codex-test",
+      "description": "Test engineering, verification harnesses, edge-case generation, and benchmarking."
+    },
+    {
+      "id": "codex-skills",
+      "command": "/codex-skills",
+      "directory": "skills/codex-skills",
+      "description": "Skill creation engine: scaffolds new 6-file domain editions, custom task workflows, and workspace-extracted skills."
+    }
+  ],
   "editions": [
     {
       "id": "c-cpp",
       "name": "C/C++ — Research & Invention Edition",
       "description": "Systems programming, new technology research, GPU/graphics, compilers, and low-level invention.",
-      "directory": "c-cpp",
-      "icon": "🔧",
-      "tags": ["systems", "graphics", "gpu", "compilers", "ai-runtime", "performance"],
+      "directory": "skills/codex/c-cpp",
+      "tags": [
+        "systems",
+        "graphics",
+        "gpu",
+        "compilers",
+        "ai-runtime",
+        "performance"
+      ],
       "files": [
-        { "file": "01-core-identity.md", "purpose": "Identity, values, and thinking style", "required": true },
-        { "file": "02-languages-standards.md", "purpose": "C++20/23 standards, code quality, memory discipline" },
-        { "file": "03-first-principles.md", "purpose": "Invention method, math, physics, cross-domain reasoning" },
-        { "file": "04-domains-knowledge.md", "purpose": "Systems, GPU, AI/ML, compilers, networking, security" },
-        { "file": "05-research-method.md", "purpose": "Hypothesis → experiment → prototype → iterate" },
-        { "file": "06-response-style.md", "purpose": "Communication format, code style, references" }
+        {
+          "file": "01-core-identity.md",
+          "purpose": "Identity, values, and thinking style",
+          "required": true
+        },
+        {
+          "file": "02-languages-standards.md",
+          "purpose": "C++20/23 standards, code quality, memory discipline"
+        },
+        {
+          "file": "03-first-principles.md",
+          "purpose": "Invention method, math, physics, cross-domain reasoning"
+        },
+        {
+          "file": "04-domains-knowledge.md",
+          "purpose": "Systems, GPU, AI/ML, compilers, networking, security"
+        },
+        {
+          "file": "05-research-method.md",
+          "purpose": "Hypothesis → experiment → prototype → iterate"
+        },
+        {
+          "file": "06-response-style.md",
+          "purpose": "Communication format, code style, references"
+        }
       ]
     },
     {
       "id": "python",
       "name": "Python — AI/ML & Systems Edition",
       "description": "AI/ML engineering, data science, production Python systems, and developer tooling.",
-      "directory": "python",
-      "icon": "🐍",
-      "tags": ["ai", "ml", "data-science", "fastapi", "pytorch", "production"],
+      "directory": "skills/codex/python",
+      "tags": [
+        "ai",
+        "ml",
+        "data-science",
+        "fastapi",
+        "pytorch",
+        "production"
+      ],
       "files": [
-        { "file": "01-core-identity.md", "purpose": "Identity, values, and thinking style", "required": true },
-        { "file": "02-languages-standards.md", "purpose": "Python 3.12+ standards, type system, tooling" },
-        { "file": "03-first-principles.md", "purpose": "Data modeling, math, decomposition" },
-        { "file": "04-domains-knowledge.md", "purpose": "PyTorch, pandas, FastAPI, GUI, profiling" },
-        { "file": "05-research-method.md", "purpose": "Invention loop: model → prototype → measure → refine" },
-        { "file": "06-response-style.md", "purpose": "Communication format, code style, references" }
+        {
+          "file": "01-core-identity.md",
+          "purpose": "Identity, values, and thinking style",
+          "required": true
+        },
+        {
+          "file": "02-languages-standards.md",
+          "purpose": "Python 3.12+ standards, type system, tooling"
+        },
+        {
+          "file": "03-first-principles.md",
+          "purpose": "Data modeling, math, decomposition"
+        },
+        {
+          "file": "04-domains-knowledge.md",
+          "purpose": "PyTorch, pandas, FastAPI, GUI, profiling"
+        },
+        {
+          "file": "05-research-method.md",
+          "purpose": "Invention loop: model → prototype → measure → refine"
+        },
+        {
+          "file": "06-response-style.md",
+          "purpose": "Communication format, code style, references"
+        }
       ]
     },
     {
       "id": "typescript-react",
       "name": "TypeScript / React / Next.js Edition",
       "description": "Fullstack web applications, React 19+ architecture, and modern frontend engineering.",
-      "directory": "typescript-react",
-      "icon": "⚡",
-      "tags": ["frontend", "react", "nextjs", "typescript", "fullstack", "web"],
+      "directory": "skills/codex/typescript-react",
+      "tags": [
+        "frontend",
+        "react",
+        "nextjs",
+        "typescript",
+        "fullstack",
+        "web"
+      ],
       "files": [
-        { "file": "01-core-identity.md", "purpose": "Identity, values, and thinking style", "required": true },
-        { "file": "02-languages-standards.md", "purpose": "TypeScript strict, React 19+, Next.js 15+" },
-        { "file": "03-first-principles.md", "purpose": "Component architecture, state management" },
-        { "file": "04-domains-knowledge.md", "purpose": "React ecosystem, a11y, testing, DB, auth" },
-        { "file": "05-research-method.md", "purpose": "Frontend invention loop: prototype to ship" },
-        { "file": "06-response-style.md", "purpose": "Communication format, code style, references" }
+        {
+          "file": "01-core-identity.md",
+          "purpose": "Identity, values, and thinking style",
+          "required": true
+        },
+        {
+          "file": "02-languages-standards.md",
+          "purpose": "TypeScript strict, React 19+, Next.js 15+"
+        },
+        {
+          "file": "03-first-principles.md",
+          "purpose": "Component architecture, state management"
+        },
+        {
+          "file": "04-domains-knowledge.md",
+          "purpose": "React ecosystem, a11y, testing, DB, auth"
+        },
+        {
+          "file": "05-research-method.md",
+          "purpose": "Frontend invention loop: prototype to ship"
+        },
+        {
+          "file": "06-response-style.md",
+          "purpose": "Communication format, code style, references"
+        }
       ]
     },
     {
       "id": "php",
       "name": "PHP — Modern Web & API Engineering Edition",
       "description": "Modern PHP 8.3+, Laravel, Symfony, API engineering, and production web systems.",
-      "directory": "php",
-      "icon": "🐘",
-      "tags": ["web", "api", "laravel", "symfony", "php8", "backend"],
+      "directory": "skills/codex/php",
+      "tags": [
+        "web",
+        "api",
+        "laravel",
+        "symfony",
+        "php8",
+        "backend"
+      ],
       "files": [
-        { "file": "01-core-identity.md", "purpose": "Identity, values, and thinking style", "required": true },
-        { "file": "02-languages-standards.md", "purpose": "PHP 8.3+ standards, PSRs, architecture" },
-        { "file": "03-first-principles.md", "purpose": "DDD, request lifecycle, decomposition" },
-        { "file": "04-domains-knowledge.md", "purpose": "Laravel, Symfony, APIs, DB, security" },
-        { "file": "05-research-method.md", "purpose": "Invention loop: prototype to production" },
-        { "file": "06-response-style.md", "purpose": "Communication format, code style, references" }
+        {
+          "file": "01-core-identity.md",
+          "purpose": "Identity, values, and thinking style",
+          "required": true
+        },
+        {
+          "file": "02-languages-standards.md",
+          "purpose": "PHP 8.3+ standards, PSRs, architecture"
+        },
+        {
+          "file": "03-first-principles.md",
+          "purpose": "DDD, request lifecycle, decomposition"
+        },
+        {
+          "file": "04-domains-knowledge.md",
+          "purpose": "Laravel, Symfony, APIs, DB, security"
+        },
+        {
+          "file": "05-research-method.md",
+          "purpose": "Invention loop: prototype to production"
+        },
+        {
+          "file": "06-response-style.md",
+          "purpose": "Communication format, code style, references"
+        }
       ]
     },
     {
       "id": "rust",
       "name": "Rust — Systems & Safety Edition",
       "description": "Ownership-driven design, zero-cost abstractions, async Rust, embedded, and fearless concurrency.",
-      "directory": "rust",
-      "icon": "🦀",
-      "tags": ["systems", "safety", "async", "embedded", "wasm", "performance"],
+      "directory": "skills/codex/rust",
+      "tags": [
+        "systems",
+        "safety",
+        "async",
+        "embedded",
+        "wasm",
+        "performance"
+      ],
       "files": [
-        { "file": "01-core-identity.md", "purpose": "Ownership-first thinking, safety values", "required": true },
-        { "file": "02-languages-standards.md", "purpose": "Rust 2024 edition, Clippy, unsafe discipline" },
-        { "file": "03-first-principles.md", "purpose": "Type-driven design, zero-cost abstractions" },
-        { "file": "04-domains-knowledge.md", "purpose": "Tokio, embedded, WASM, FFI, CLI, crypto" },
-        { "file": "05-research-method.md", "purpose": "Compiler-driven development, type-first prototyping" },
-        { "file": "06-response-style.md", "purpose": "Communication format, code style, references" }
+        {
+          "file": "01-core-identity.md",
+          "purpose": "Ownership-first thinking, safety values",
+          "required": true
+        },
+        {
+          "file": "02-languages-standards.md",
+          "purpose": "Rust 2024 edition, Clippy, unsafe discipline"
+        },
+        {
+          "file": "03-first-principles.md",
+          "purpose": "Type-driven design, zero-cost abstractions"
+        },
+        {
+          "file": "04-domains-knowledge.md",
+          "purpose": "Tokio, embedded, WASM, FFI, CLI, crypto"
+        },
+        {
+          "file": "05-research-method.md",
+          "purpose": "Compiler-driven development, type-first prototyping"
+        },
+        {
+          "file": "06-response-style.md",
+          "purpose": "Communication format, code style, references"
+        }
       ]
     },
     {
       "id": "go",
       "name": "Go — Cloud Infrastructure & DevOps Edition",
       "description": "Cloud-native services, Kubernetes operators, CLI tools, and infrastructure automation.",
-      "directory": "go",
-      "icon": "🔷",
-      "tags": ["cloud", "kubernetes", "devops", "microservices", "infrastructure", "cli"],
+      "directory": "skills/codex/go",
+      "tags": [
+        "cloud",
+        "kubernetes",
+        "devops",
+        "microservices",
+        "infrastructure",
+        "cli"
+      ],
       "files": [
-        { "file": "01-core-identity.md", "purpose": "Simplicity-first thinking, operational excellence", "required": true },
-        { "file": "02-languages-standards.md", "purpose": "Go 1.22+ standards, error handling, concurrency" },
-        { "file": "03-first-principles.md", "purpose": "Simplicity as discipline, interface design" },
-        { "file": "04-domains-knowledge.md", "purpose": "Cloud-native, Kubernetes, observability, databases" },
-        { "file": "05-research-method.md", "purpose": "Interface-first prototyping, production checklist" },
-        { "file": "06-response-style.md", "purpose": "Communication format, code style, references" }
+        {
+          "file": "01-core-identity.md",
+          "purpose": "Simplicity-first thinking, operational excellence",
+          "required": true
+        },
+        {
+          "file": "02-languages-standards.md",
+          "purpose": "Go 1.22+ standards, error handling, concurrency"
+        },
+        {
+          "file": "03-first-principles.md",
+          "purpose": "Simplicity as discipline, interface design"
+        },
+        {
+          "file": "04-domains-knowledge.md",
+          "purpose": "Cloud-native, Kubernetes, observability, databases"
+        },
+        {
+          "file": "05-research-method.md",
+          "purpose": "Interface-first prototyping, production checklist"
+        },
+        {
+          "file": "06-response-style.md",
+          "purpose": "Communication format, code style, references"
+        }
       ]
     },
     {
       "id": "ui-ux-design",
       "name": "UI/UX Design — Interface & Systems Edition",
       "description": "Product design, design systems, accessibility, user research, and cross-platform interfaces.",
-      "directory": "ui-ux-design",
-      "icon": "🎨",
-      "tags": ["design", "ux", "ui", "accessibility", "design-systems", "research"],
+      "directory": "skills/codex/ui-ux-design",
+      "tags": [
+        "design",
+        "ux",
+        "ui",
+        "accessibility",
+        "design-systems",
+        "research"
+      ],
       "files": [
-        { "file": "01-core-identity.md", "purpose": "User-centered thinking, design values", "required": true },
-        { "file": "02-languages-standards.md", "purpose": "Design tokens, color, typography, spacing, components" },
-        { "file": "03-first-principles.md", "purpose": "Cognitive principles, visual hierarchy, responsive design" },
-        { "file": "04-domains-knowledge.md", "purpose": "Design systems, a11y, motion, data viz, research" },
-        { "file": "05-research-method.md", "purpose": "Design loop: discover → define → ideate → test → ship" },
-        { "file": "06-response-style.md", "purpose": "Spec format, wireframe notation, review patterns" }
+        {
+          "file": "01-core-identity.md",
+          "purpose": "User-centered thinking, design values",
+          "required": true
+        },
+        {
+          "file": "02-languages-standards.md",
+          "purpose": "Design tokens, color, typography, spacing, components"
+        },
+        {
+          "file": "03-first-principles.md",
+          "purpose": "Cognitive principles, visual hierarchy, responsive design"
+        },
+        {
+          "file": "04-domains-knowledge.md",
+          "purpose": "Design systems, a11y, motion, data viz, research"
+        },
+        {
+          "file": "05-research-method.md",
+          "purpose": "Design loop: discover → define → ideate → test → ship"
+        },
+        {
+          "file": "06-response-style.md",
+          "purpose": "Spec format, wireframe notation, review patterns"
+        }
       ]
     },
     {
       "id": "java-kotlin",
       "name": "Java / Kotlin — Enterprise & Android Edition",
       "description": "Enterprise backend systems, Android applications, microservices, event-driven architecture, and production JVM engineering.",
-      "directory": "java-kotlin",
-      "icon": "☕",
-      "tags": ["enterprise", "android", "spring", "kotlin", "microservices", "jvm"],
+      "directory": "skills/codex/java-kotlin",
+      "tags": [
+        "enterprise",
+        "android",
+        "spring",
+        "kotlin",
+        "microservices",
+        "jvm"
+      ],
       "files": [
-        { "file": "01-core-identity.md", "purpose": "Identity, values, type-safety-first thinking", "required": true },
-        { "file": "02-languages-standards.md", "purpose": "Java 21+, Kotlin 2.0+ standards, build tooling" },
-        { "file": "03-first-principles.md", "purpose": "Architecture, DI, concurrency models, error handling" },
-        { "file": "04-domains-knowledge.md", "purpose": "Spring Boot, Android/Compose, Kafka, databases, testing" },
-        { "file": "05-research-method.md", "purpose": "Domain-model-first prototyping, production checklist" },
-        { "file": "06-response-style.md", "purpose": "Communication format, code style, references" }
+        {
+          "file": "01-core-identity.md",
+          "purpose": "Identity, values, type-safety-first thinking",
+          "required": true
+        },
+        {
+          "file": "02-languages-standards.md",
+          "purpose": "Java 21+, Kotlin 2.0+ standards, build tooling"
+        },
+        {
+          "file": "03-first-principles.md",
+          "purpose": "Architecture, DI, concurrency models, error handling"
+        },
+        {
+          "file": "04-domains-knowledge.md",
+          "purpose": "Spring Boot, Android/Compose, Kafka, databases, testing"
+        },
+        {
+          "file": "05-research-method.md",
+          "purpose": "Domain-model-first prototyping, production checklist"
+        },
+        {
+          "file": "06-response-style.md",
+          "purpose": "Communication format, code style, references"
+        }
+      ]
+    },
+    {
+      "id": "swift",
+      "name": "Swift — iOS, macOS & Apple Platforms Edition",
+      "description": "Native Apple platforms engineering, Swift 6 strict concurrency, SwiftUI architecture, Metal, and server-side Swift.",
+      "directory": "skills/codex/swift",
+      "tags": [
+        "swift",
+        "ios",
+        "macos",
+        "visionos",
+        "swiftui",
+        "apple-silicon",
+        "concurrency"
+      ],
+      "files": [
+        {
+          "file": "01-core-identity.md",
+          "purpose": "Identity, values, and concurrency-first, value-semantic thinking",
+          "required": true
+        },
+        {
+          "file": "02-languages-standards.md",
+          "purpose": "Swift 6+ standards, strict concurrency, memory management (ARC)"
+        },
+        {
+          "file": "03-first-principles.md",
+          "purpose": "Value semantics vs reference types, actor isolation, declarative UI mechanics"
+        },
+        {
+          "file": "04-domains-knowledge.md",
+          "purpose": "SwiftUI 6+, SwiftData, App Architecture (TCA/MVVM), Metal/CoreML, Server Swift"
+        },
+        {
+          "file": "05-research-method.md",
+          "purpose": "Preview-driven prototyping, Instruments profiling, leak audit, production checklist"
+        },
+        {
+          "file": "06-response-style.md",
+          "purpose": "Communication format, Swift code style, HIG & API critique"
+        }
+      ]
+    },
+    {
+      "id": "csharp-dotnet",
+      "name": "C# / .NET — Enterprise & Game Development Edition",
+      "description": "Cloud-native microservices, enterprise architecture, high-throughput zero-allocation pipelines, and game engineering (Unity/Godot).",
+      "directory": "skills/codex/csharp-dotnet",
+      "tags": [
+        "csharp",
+        "dotnet",
+        "aspnetcore",
+        "unity",
+        "microservices",
+        "high-performance",
+        "zero-allocation"
+      ],
+      "files": [
+        {
+          "file": "01-core-identity.md",
+          "purpose": "Identity, values, and zero-allocation & type-safety thinking",
+          "required": true
+        },
+        {
+          "file": "02-languages-standards.md",
+          "purpose": "C# 13+ / .NET 9+ standards, nullability, async discipline, code quality"
+        },
+        {
+          "file": "03-first-principles.md",
+          "purpose": "CLR memory mechanics, GC generations, Span/Memory, async state machines, DDD"
+        },
+        {
+          "file": "04-domains-knowledge.md",
+          "purpose": "ASP.NET Core, EF Core 9, .NET Aspire / Microservices, Unity/Godot Game Dev, Native AOT"
+        },
+        {
+          "file": "05-research-method.md",
+          "purpose": "BenchmarkDotNet loop, memory leak & allocation profiling, test pyramid, production checklist"
+        },
+        {
+          "file": "06-response-style.md",
+          "purpose": "Communication format, C# code standards, memory benchmark reports"
+        }
+      ]
+    },
+    {
+      "id": "elixir",
+      "name": "Elixir / OTP — Distributed Systems & Concurrency Edition",
+      "description": "Distributed systems, supervision trees, Phoenix LiveView, BEAM internals, and fault-tolerant concurrency.",
+      "directory": "skills/codex/elixir",
+      "tags": [
+        "elixir",
+        "otp",
+        "beam",
+        "phoenix",
+        "liveview",
+        "distributed",
+        "concurrency",
+        "fault-tolerance"
+      ],
+      "files": [
+        {
+          "file": "01-core-identity.md",
+          "purpose": "Principal Architect persona, let-it-crash values, 7-step thinking style",
+          "required": true
+        },
+        {
+          "file": "02-languages-standards.md",
+          "purpose": "Elixir 1.17+ / OTP 27 standards, pattern matching, binary memory discipline"
+        },
+        {
+          "file": "03-first-principles.md",
+          "purpose": "BEAM scheduler, reduction-based preemption, actor model, supervision trees"
+        },
+        {
+          "file": "04-domains-knowledge.md",
+          "purpose": "Phoenix LiveView 1.0, Ecto 3.12, Broadway, Ash Framework, Nx Machine Learning"
+        },
+        {
+          "file": "05-research-method.md",
+          "purpose": "Benchee benchmarking, Recon tracing, ExUnit testing pyramid, release checklist"
+        },
+        {
+          "file": "06-response-style.md",
+          "purpose": "Communication format, Elixir code standards, canonical reference map"
+        }
+      ]
+    },
+    {
+      "id": "zig",
+      "name": "Zig — Robust Systems Programming & Toolchains Edition",
+      "description": "Explicit memory management, custom allocators, comptime metaprogramming, and cross-compilation toolchains.",
+      "directory": "skills/codex/zig",
+      "tags": [
+        "zig",
+        "systems",
+        "low-level",
+        "memory-safety",
+        "comptime",
+        "toolchains",
+        "cross-compilation",
+        "performance"
+      ],
+      "files": [
+        {
+          "file": "01-core-identity.md",
+          "purpose": "Principal Systems persona, zero-hidden-control-flow values, 7-step thinking style",
+          "required": true
+        },
+        {
+          "file": "02-languages-standards.md",
+          "purpose": "Zig 0.13+ standards, memory allocators, error unions, defer/errdefer discipline"
+        },
+        {
+          "file": "03-first-principles.md",
+          "purpose": "Zero hidden control flow, comptime reflection, C ABI memory layouts, SIMD"
+        },
+        {
+          "file": "04-domains-knowledge.md",
+          "purpose": "TigerBeetle-style storage, network engines, build.zig system, cross-compilation"
+        },
+        {
+          "file": "05-research-method.md",
+          "purpose": "Unit testing with std.testing.allocator, release modes, Tracy profiling"
+        },
+        {
+          "file": "06-response-style.md",
+          "purpose": "Communication format, Zig code standards, canonical reference map"
+        }
+      ]
+    },
+    {
+      "id": "sql-database",
+      "name": "SQL & Database Engineering Edition",
+      "description": "High-throughput query optimization, schema architecture, indexing mechanics, and zero-downtime migrations.",
+      "directory": "skills/codex/sql-database",
+      "tags": [
+        "sql",
+        "database",
+        "postgresql",
+        "mysql",
+        "sqlite",
+        "indexing",
+        "query-optimization",
+        "migrations",
+        "pgvector",
+        "performance"
+      ],
+      "files": [
+        {
+          "file": "01-core-identity.md",
+          "purpose": "Principal Database Architect persona, storage integrity values, 7-step thinking style",
+          "required": true
+        },
+        {
+          "file": "02-languages-standards.md",
+          "purpose": "SQL:2023 standards, zero-downtime migrations, keyset pagination, lock safety"
+        },
+        {
+          "file": "03-first-principles.md",
+          "purpose": "Cost-based optimizer, B-Tree/BRIN/GIN index mechanics, MVCC page layouts"
+        },
+        {
+          "file": "04-domains-knowledge.md",
+          "purpose": "Declarative partitioning, pgvector AI search, PgBouncer pooling, CDC replication"
+        },
+        {
+          "file": "05-research-method.md",
+          "purpose": "EXPLAIN (ANALYZE, BUFFERS), pg_stat_statements profiling, index bloat audits"
+        },
+        {
+          "file": "06-response-style.md",
+          "purpose": "Communication format, SQL DDL/DML standards, canonical reference map"
+        }
+      ]
+    },
+    {
+      "id": "solidity-web3",
+      "name": "Solidity & Web3 Systems Edition",
+      "description": "High-security smart contracts, EVM gas optimization, reentrancy guards, DeFi math, and formal verification.",
+      "directory": "skills/codex/solidity-web3",
+      "tags": [
+        "solidity",
+        "web3",
+        "ethereum",
+        "evm",
+        "smart-contracts",
+        "defi",
+        "foundry",
+        "security",
+        "erc4626",
+        "erc4337"
+      ],
+      "files": [
+        {
+          "file": "01-core-identity.md",
+          "purpose": "Principal Security Researcher persona, invariant primacy, 7-step threat modeling",
+          "required": true
+        },
+        {
+          "file": "02-languages-standards.md",
+          "purpose": "Solidity 0.8.26+ standards, custom errors, storage packing, transient storage guard"
+        },
+        {
+          "file": "03-first-principles.md",
+          "purpose": "EVM execution model, gas scheduling, Yul assembly, EIP-712 cryptography"
+        },
+        {
+          "file": "04-domains-knowledge.md",
+          "purpose": "DeFi AMM curves, ERC-4626 vault inflation defense, Chainlink oracles, ERC-4337"
+        },
+        {
+          "file": "05-research-method.md",
+          "purpose": "Foundry invariant/fuzz testing, Slither static analysis, gas profiling, audit checklist"
+        },
+        {
+          "file": "06-response-style.md",
+          "purpose": "Communication format, Solidity code standards, canonical reference map"
+        }
+      ]
+    },
+    {
+      "id": "flutter-dart",
+      "name": "Flutter & Dart — Multi-Platform Systems Edition",
+      "description": "Multi-platform UI engineering, 120 FPS zero-jank frame budgets, BLoC/Riverpod state architecture, and native platform bridges.",
+      "directory": "skills/codex/flutter-dart",
+      "tags": [
+        "flutter",
+        "dart",
+        "mobile",
+        "ios",
+        "android",
+        "bloc",
+        "riverpod",
+        "impeller",
+        "cross-platform",
+        "ui-ux"
+      ],
+      "files": [
+        {
+          "file": "01-core-identity.md",
+          "purpose": "Principal Mobile Architect persona, 120 FPS frame budget values, 7-step method",
+          "required": true
+        },
+        {
+          "file": "02-languages-standards.md",
+          "purpose": "Dart 3.5+ standards, sealed classes, pattern matching, BLoC concurrency transformers"
+        },
+        {
+          "file": "03-first-principles.md",
+          "purpose": "Three Trees architecture, layout constraints protocol, Impeller engine, Dart Isolates"
+        },
+        {
+          "file": "04-domains-knowledge.md",
+          "purpose": "BLoC state machines, GoRouter deep linking, Clean Architecture, Pigeon native bridges"
+        },
+        {
+          "file": "05-research-method.md",
+          "purpose": "DevTools timeline profiling, bloc_test suites, Golden widget tests, release checklist"
+        },
+        {
+          "file": "06-response-style.md",
+          "purpose": "Communication format, Flutter widget standards, canonical reference map"
+        }
       ]
     }
   ],
   "combinations": {
     "exploring": {
       "name": "Exploring a new idea",
-      "files": ["01-core-identity.md", "03-first-principles.md", "05-research-method.md"]
+      "files": [
+        "01-core-identity.md",
+        "03-first-principles.md",
+        "05-research-method.md"
+      ]
     },
     "coding": {
       "name": "Writing production code",
-      "files": ["01-core-identity.md", "02-languages-standards.md", "06-response-style.md"]
+      "files": [
+        "01-core-identity.md",
+        "02-languages-standards.md",
+        "06-response-style.md"
+      ]
     },
     "research": {
       "name": "Deep technical research",
-      "files": ["01-core-identity.md", "03-first-principles.md", "04-domains-knowledge.md"]
+      "files": [
+        "01-core-identity.md",
+        "03-first-principles.md",
+        "04-domains-knowledge.md"
+      ]
     },
     "full": {
       "name": "Full invention session",
-      "files": ["01-core-identity.md", "02-languages-standards.md", "03-first-principles.md", "04-domains-knowledge.md", "05-research-method.md", "06-response-style.md"]
+      "files": [
+        "01-core-identity.md",
+        "02-languages-standards.md",
+        "03-first-principles.md",
+        "04-domains-knowledge.md",
+        "05-research-method.md",
+        "06-response-style.md"
+      ]
     }
   },
   "integrations": {
-    "cursor": { "config": "integrations/cursorrules.example", "target": ".cursorrules" },
-    "claude-code": { "config": "integrations/CLAUDE.example.md", "target": "CLAUDE.md" },
-    "windsurf": { "config": "integrations/windsurfrules.example", "target": ".windsurfrules" },
-    "copilot": { "config": "integrations/copilot-instructions.example.md", "target": ".github/copilot-instructions.md" },
-    "continue": { "config": "integrations/continue-config.example.json", "target": ".continue/config.json" },
-    "zed": { "config": "integrations/zed-settings.example.json", "target": ".zed/settings.json" }
+    "cursor": {
+      "config": "integrations/cursorrules.example",
+      "target": ".cursorrules"
+    },
+    "claude-code": {
+      "config": "integrations/CLAUDE.example.md",
+      "target": "CLAUDE.md"
+    },
+    "windsurf": {
+      "config": "integrations/windsurfrules.example",
+      "target": ".windsurfrules"
+    },
+    "copilot": {
+      "config": "integrations/copilot-instructions.example.md",
+      "target": ".github/copilot-instructions.md"
+    },
+    "continue": {
+      "config": "integrations/continue-config.example.json",
+      "target": ".continue/config.json"
+    },
+    "zed": {
+      "config": "integrations/zed-settings.example.json",
+      "target": ".zed/settings.json"
+    },
+    "gemini": {
+      "config": "integrations/GEMINI.example.md",
+      "target": "GEMINI.md"
+    },
+    "agents": {
+      "config": "integrations/AGENTS.example.md",
+      "target": "AGENTS.md"
+    },
+    "cline": {
+      "config": "integrations/clinerules.example",
+      "target": ".clinerules"
+    }
   }
 }

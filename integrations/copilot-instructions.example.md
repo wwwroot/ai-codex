@@ -23,7 +23,10 @@ Replace `python/` above with any edition directory:
 - `php/` — PHP Modern Web & API
 - `rust/` — Rust Systems & Safety
 - `go/` — Go Cloud Infrastructure & DevOps
+- `java-kotlin/` — Java / Kotlin Enterprise & Android
 - `ui-ux-design/` — UI/UX Design & Systems
+- `swift/` — Swift iOS, macOS & Apple Platforms
+- `csharp-dotnet/` — C# / .NET Enterprise & Game Development
 
 ## Key Principles
 - Always handle errors explicitly
