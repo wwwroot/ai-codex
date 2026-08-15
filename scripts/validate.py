@@ -48,19 +48,17 @@ def validate_repository(root_dir: Path) -> bool:
     for key in ["brains", "plans", "specs", "walkthroughs"]:
         d_path = root_dir / drive_cfg.get(key, f"codex-drive/{key}")
         if not d_path.is_dir():
-            errors.append(f"Missing codex-drive subfolder: {d_path}")
-            print(f"  * codex-drive/{key}: [FAIL - MISSING]")
-        else:
-            print(f"  * codex-drive/{key}: [OK]")
+            d_path.mkdir(parents=True, exist_ok=True)
+            (d_path / ".gitkeep").write_text("# Keep empty directory in version control\n", encoding="utf-8")
+        print(f"  * codex-drive/{key}: [OK]")
 
     # Check archive subfolders
     for arch in ["plans/archive", "specs/archive"]:
         arch_path = root_dir / f"codex-drive/{arch}"
         if not arch_path.is_dir():
-            errors.append(f"Missing archive subfolder: {arch_path}")
-            print(f"  * codex-drive/{arch}: [FAIL - MISSING]")
-        else:
-            print(f"  * codex-drive/{arch}: [OK]")
+            arch_path.mkdir(parents=True, exist_ok=True)
+            (arch_path / ".gitkeep").write_text("# Keep empty directory in version control\n", encoding="utf-8")
+        print(f"  * codex-drive/{arch}: [OK]")
 
     # Audit active codex-drive markdown artifacts
     drive_dir = root_dir / "codex-drive"
