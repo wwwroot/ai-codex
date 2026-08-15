@@ -1,0 +1,18 @@
+# NPM Package Exclusion List
+.github/
+.git/
+.vscode/
+.idea/
+.agents/
+.agent/
+.cursor/
+.claude/
+.devin/
+.cline/
+.roo/
+.continue/
+.zed/
+scripts/
+*.log
+.DS_Store
+Thumbs.db

@@ -45,7 +45,6 @@ dist/
 target/
 
 # Go
-bin/
 pkg/
 
 # C/C++
