@@ -31,11 +31,5 @@
     "copilot",
     "prompt-engineering",
     "engineering"
-  ],
-  "author": "AI Codex Contributors",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/wwwroot/ai-codex.git"
-  }
+  ]
 }
